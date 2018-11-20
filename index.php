@@ -6,4 +6,5 @@ Nomads @ 2018. | by Alphabetus
 <?php  include "includes/head.php" ?>
 <body>
 </body>
+<?php include "includes/footer.php" ?>
 </html>
