@@ -3,6 +3,8 @@ body{
   color: #EEF1EF;
 }
 footer{
+  position: fixed;
+  bottom: 0;
   font-size: 8px;
   color: #525356;
 }
