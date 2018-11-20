@@ -1,4 +1,4 @@
 <?php
   print "DONE";
-  print "OK";
+  print "OK2";
 ?>
