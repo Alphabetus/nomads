@@ -3,6 +3,9 @@ body{
   color: #EEF1EF;
 }
 footer{
+  height: auto;
+  width: auto;
+  padding: 5px;
   position: fixed;
   bottom: 0;
   font-size: 8px;
