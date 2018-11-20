@@ -1,4 +1,7 @@
-<?php
-  print "DONE";
-  print "OK3";
-?>
+<html>
+<!--
+Open Source Browser Game ~ Space Exploration
+Nomads @ 2018. | by Alphabetus
+-->
+<?php  include "includes/head.php" ?>
+</html>
