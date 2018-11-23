@@ -1,0 +1,9 @@
+<p>
+  Welcome to Nomads, a Space exploration role play game.<br>
+  Explore the Universe, gather resources, colonise and evolve your civilisation.
+</p>
+<p>
+  This is a sandbox game indie programming. Participate actively and help me improve.<br>
+  Are you a developer? Wanna join the team?<br>
+  Join the <a href="https://github.com/Alphabetus/Nomads" target="_blank">GitHub</a>.
+</p>
