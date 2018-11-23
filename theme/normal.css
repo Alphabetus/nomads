@@ -57,6 +57,10 @@ a:hover{
   padding: 15px;
   vertical-align: middle;
 }
+/* CURSOR HANDLING SPEC CLASSES */
+.cursorPointer{
+  cursor: pointer;
+}
 /* FORM HANDLING */
 .regFormInput{
   border: 0.2px;
@@ -64,6 +68,11 @@ a:hover{
   border-color: rgba(255, 255, 255, 0.2);
   padding: 15px;
   background-color: transparent;
+  cursor: pointer;
+}
+.regFormInput:focus{
+  outline: none!important;
+  border-color: var(--lightblue);
 }
 .regFormInput::placeholder{
   color: var(--lightblue);
@@ -85,6 +94,7 @@ a:hover{
   border-style: none;
 }
 .button_register{
+  cursor: pointer;
   background: var(--lightblue);
   width: 60%;
   font-size: 18px;
