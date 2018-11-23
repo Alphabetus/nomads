@@ -47,8 +47,8 @@ function usernameSyntax($username){
 // ------------------------------------------------------------------------------------------------------------------------------
 // VALIDATE IF USERNAME IS FREE
 function isUsernameFree($username){
-  $username = mysqli_escape_string($username);
   include ("includes/dbConfig.php");
+  $username = mysqli_escape_string($con, $username);
   $uQ = mysqli_query($con, "SELECT username FROM user WHERE username='$username'");
   $uCount = mysqli_num_rows($uQ);
   if($uCount > 0){
@@ -62,8 +62,8 @@ function isUsernameFree($username){
 // ------------------------------------------------------------------------------------------------------------------------------
 // VALIDATE IF EMAIL IS TAKEN
 function isEmailFree($email){
-  $email = mysqli_escape_string($email);
   include ("includes/dbConfig.php");
+  $email = mysqli_escape_string($con, $email);
   $out = true;
   $eQ = mysqli_query($con, "SELECT email FROM user WHERE email='$email'");
   $eCount = mysqli_num_rows($eQ);
@@ -104,6 +104,30 @@ function sendRegistrationEmail($email,$username,$link){
   }
   else{
     $out = false;
+  }
+  return $out;
+}
+// ------------------------------------------------------------------------------------------------------------------------------
+// CREATE NEW USER
+function createUser($username,$email,$password){
+  $out = true;
+  include ("includes/dbConfig.php");
+  // deal with username
+  $username = mysqli_escape_string($con, $username);
+  $email = mysqli_escape_string($con, $email);
+  $password = mysqli_escape_string($con, $password);
+  $createQ = mysqli_query($con, "INSERT INTO user (username,email,password) VALUES ('$username','$email','$password')");
+  // deal with activation token
+  $saltA = time();
+  $saltB = $username;
+  $saltC = $email;
+  $mix = $saltA . $saltB . $saltC;
+  $token = md5($mix);
+  $createTokenQ = mysqli_query($con, "INSERT INTO user_token (token_username,token_token) VALUES ('$username','$token')");
+  if (!$createQ OR !$createTokenQ){
+    print mysqli_error($con);
+    $out = false;
+    return $out;
   }
   return $out;
 }

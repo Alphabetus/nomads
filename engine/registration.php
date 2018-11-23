@@ -35,7 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       return;
     }
     // VALIDATIONS SHOULD BE PLACED ABOVE THIS LINE
-    //
+    // USER CREATION
+    if (!createUser($user,$email,$pass)){
+      $registerOutput = getString("error_creating_user");
+      return;
+    }
     // ALL IS SET > SEND CONFIRMATION EMAIL
     if (!sendRegistrationEmail($email,$user,"http://followarmy.com/")){
       $registerOutput = getString("error_sendmail_register");

@@ -1,0 +1,2 @@
+Something went wrong with user creation. Please report the error to the devs.<br>
+Try again later. Thanks.
