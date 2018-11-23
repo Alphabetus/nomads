@@ -1,0 +1,2 @@
+The email you are trying to use is already registered in our system.<br>
+Please use another email and try again.

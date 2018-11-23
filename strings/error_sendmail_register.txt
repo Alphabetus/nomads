@@ -1,0 +1,2 @@
+Something went wrong with the email sending.<br>
+Please report it to the devs on our GitHub. Thanks.

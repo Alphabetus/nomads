@@ -15,6 +15,9 @@ Nomads @ 2018. | by Alphabetus
 -->
 <?php include "includes/head.php" ?>
 <body>
+  <div id="topper">
+    <?php include ("includes/topper.php"); ?>
+  </div>
   <?php
     $view = $_GET['view'];
     switch($view){
@@ -32,6 +35,9 @@ Nomads @ 2018. | by Alphabetus
         break;
       case 'register':
         include "views/register.php";
+        break;
+      case 'welcome':
+        include "views/welcome.php";
         break;
       default:
         print "404 NOT FOUND";

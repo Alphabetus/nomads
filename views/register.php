@@ -42,9 +42,15 @@ include "engine/registration.php";
         </tr>
       </table>
       <br>
-      <?php
-        print $registerOutput;
-      ?>
+      <center>
+        <span class="errorOutput">
+          <b>
+            <?php
+              print $registerOutput;
+            ?>
+          </b>
+        </span>
+      </center>
     </div>
   </div>
 </div>

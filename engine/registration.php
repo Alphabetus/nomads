@@ -24,6 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       $registerOutput = getString("bad_username");
       return;
     }
+    // VALIDATE IF USERNAME IS FREE
+    if (!isUsernameFree($user)){
+      $registerOutput = getString("username_taken");
+      return;
+    }
+    // VALIDATE IF EMAIL IS TAKEN
+    if (!isEmailFree($email)){
+      $registerOutput = getString("email_taken");
+      return;
+    }
+    // VALIDATIONS SHOULD BE PLACED ABOVE THIS LINE
+    //
+    // ALL IS SET > SEND CONFIRMATION EMAIL
+    if (!sendRegistrationEmail($email,$user,"http://followarmy.com/")){
+      $registerOutput = getString("error_sendmail_register");
+      return;
+    }
+    else{
+      header("Location: /?view=welcome");
+    }
   }
 }
 ?>

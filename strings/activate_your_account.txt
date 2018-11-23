@@ -1,0 +1,8 @@
+Your account has been created.<br>
+To continue you need to verify your email address.<br>
+<br>
+Please verify your <b>Spam Box</b> as our email might had been sent there by mistake.<br>
+<br>
+<span style='color: var(--red);'>
+  <b>To verify your account please follow the instructions link present on our email.</b>
+</span>

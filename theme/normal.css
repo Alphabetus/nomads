@@ -1,7 +1,9 @@
 /* VARS */
 :root{
+  --bgcolor: rgb(49, 50, 51);
   --lightblue: rgb(30, 205, 151);
   --lightblue2 : rgb(39, 249, 185);
+  --red : rgb(205, 30, 56);
 }
 /* DOC */
 body{
@@ -9,12 +11,15 @@ body{
   color: #EEF1EF;
 }
 footer{
+  background-color: var(--bgcolor);
+  margin-top: 15px;
   height: auto;
-  width: auto;
+  width: 100%;
   padding: 5px;
   position: fixed;
   bottom: 0;
   right: 0;
+  text-align: right;
   font-size: 12px;
   color: #EEF1EF;
 }
@@ -27,6 +32,15 @@ a{
 }
 a:hover{
   color: var(--lightblue2);
+}
+#topper{
+  background-color: var(--bgcolor);
+  padding: 2px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: var(--lightblue2);
+  width: 100%;
 }
 .mainContainer{
   display: table;
@@ -57,6 +71,10 @@ a:hover{
   padding: 15px;
   vertical-align: middle;
 }
+/* STRINGS CSS */
+.errorOutput{
+  color: var(--red);
+}
 /* CURSOR HANDLING SPEC CLASSES */
 .cursorPointer{
   cursor: pointer;
@@ -82,6 +100,10 @@ a:hover{
   opacity: 1;
 }
 /* TABLE HANDLING */
+.topperTable{
+  text-align: left;
+  font-size: 12px;
+}
 .tableCenter{
   text-align: center;
 }

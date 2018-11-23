@@ -1,0 +1,2 @@
+The username you picked is already in use.<br>
+Please pick another username and try again.

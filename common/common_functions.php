@@ -2,7 +2,8 @@
 // LOAD STRING FROM FOLDER
 function getString($id){
   $fName = "strings/" . $id . ".txt";
-  $out = file_get_contents($fName);
+  $out = "<!-- STRING FILE ID: ".$id." --!>";
+  $out .= file_get_contents($fName);
   return $out;
 }
 // ------------------------------------------------------------------------------------------------------------------------------
