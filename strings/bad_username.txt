@@ -1,0 +1,2 @@
+The selected username contains illegal characters or the wrong size.<br>
+Usernames must be between 4 and 16 characters long, no spaces and no special characters.
