@@ -1,3 +1,9 @@
+<?php
+// INIT
+$registerOutput = null;
+// REGISTRATION ENGINE
+include "engine/registration.php";
+?>
 <head>
   <title>
     N Register
@@ -15,6 +21,7 @@
         <tr>
           <td class="tableCenter" colspan="2">
             <form method="POST" action="">
+              <input type="hidden" name="register" value="1"/>
               <input class="regFormInput" type="text" name="username" size="100%" placeholder="Username" required/><br>
               <br>
               <input class="regFormInput" type="email" name="email" size="100%" placeholder="Valid Email" required/><br>
@@ -34,6 +41,10 @@
           </td>
         </tr>
       </table>
+      <br>
+      <?php
+        print $registerOutput;
+      ?>
     </div>
   </div>
 </div>
