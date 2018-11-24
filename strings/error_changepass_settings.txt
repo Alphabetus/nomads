@@ -1,0 +1,3 @@
+An error occurred while changing your password.<br>
+Either new passwords were not valid or the old password is incorrect.<br>
+Try again.

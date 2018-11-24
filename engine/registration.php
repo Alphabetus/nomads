@@ -14,6 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       $registerOutput = getString("password_confirm_fail");
       return;
     }
+    // VALIDATE IF PASSWORD IS GOOD
+    if(!checkPassword($_POST['password'])){
+      $registerOutput = getString("bad_password");
+      return;
+    }
     // VALIDATE EMAIL CONFIRMATION
     if (!email_validation($email,$email2)){
       $registerOutput = getString("email_confirm_fail");

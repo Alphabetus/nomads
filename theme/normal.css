@@ -1,11 +1,17 @@
 /* VARS */
 :root{
-  --bgcolor: rgb(49, 50, 51);
-  --lightblue: rgb(30, 205, 151);
-  --lightblue2 : rgb(39, 249, 185);
-  --red : rgb(205, 30, 56);
+  --bgcolor: #313233;
+  --lightblue: #1ecd97;
+  --lightblue2 : #27f9b9;
+  --red : #cd1e38;
+  --menuhead : #E6EED6;
+  --buttontext : #034c35;
 }
 /* DOC */
+html,body{
+  margin: 0;
+  padding: 0;
+}
 body{
   background-color: #3c3d3f;
   color: #EEF1EF;
@@ -23,7 +29,18 @@ footer{
   font-size: 12px;
   color: #EEF1EF;
 }
+hr{
+  border-color: var(--lightblue);
+}
 h1{
+  color: var(--lightblue);
+}
+h2{
+  text-align: center;
+  color: var(--lightblue);
+}
+h3{
+  text-align: left;
   color: var(--lightblue);
 }
 a{
@@ -71,6 +88,32 @@ a:hover{
   padding: 15px;
   vertical-align: middle;
 }
+/* DISPLAY HANDLER */
+.resDisplay{
+  text-align: justify;
+  margin-top: 24px;
+  background-color: var(--bgcolor);
+  margin-left: 20%;
+  width: 80%;
+}
+.display{
+  text-align: justify;
+  padding: 15px;
+  margin-top: 5px;
+  margin-left: 21%;
+  margin-right: 2%;
+  background-color: var(--bgcolor);
+  width: 75%;
+}
+/* MENU HANDLER */
+#menu{
+  float: left;
+  /*margin-top: 24px;*/
+  width: 20%;
+  background-color: var(--bgcolor);
+  vertical-align: top;
+  overflow: hidden;
+}
 /* STRINGS CSS */
 .errorOutput{
   color: var(--red);
@@ -103,6 +146,7 @@ a:hover{
 .topperTable{
   text-align: left;
   font-size: 12px;
+  border-spacing: 25px 2px;
 }
 .tableCenter{
   text-align: center;
@@ -111,12 +155,34 @@ a:hover{
   width: 100%;
   height: 100%;
 }
+.menuHead{
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--menuhead);
+}
+.menuTable{
+  width: 100%;
+}
+.menuEntries{
+  padding-left: 15px;
+}
 /* BUTTONS */
 .button_ok{
+  font-size: 16px;
   background: var(--lightblue);
   padding: 5px;
   border-radius: 3px;
   border-style: none;
+  color: var(--buttontext);
+}
+.button_notok{
+  font-size: 16px;
+  background: var(--red);
+  padding: 5px;
+  border-radius: 3px;
+  border-style: none;
+  color: white;
 }
 .button_register{
   cursor: pointer;

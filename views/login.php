@@ -30,6 +30,11 @@ include ("engine/login_player.php");
             </form>
           </td>
         </tr>
+        <tr>
+          <td class="tableCenter">
+            <a href="/?view=recoverPassword">recover password</a>
+          </td>
+        </tr>
       </table>
       <br>
       <center>

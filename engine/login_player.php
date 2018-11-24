@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       return;
     }
     else{
-      header("Location: /?view=overview");
+      header("Location: /game_index.php?gameView=overview");
       return;
     }
   }

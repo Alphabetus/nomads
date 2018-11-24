@@ -1,5 +1,4 @@
 <?php
-include ("engine/lock.php");
 include ("engine/overview_engine.php");
 ?>
 <head>
@@ -7,10 +6,4 @@ include ("engine/overview_engine.php");
     N Overview
   </title>
 </head>
-<div class="mainContainer">
-  <div class="splashBoundaries">
-    <div class="registerBox">
-      OVERVIEW
-    </div>
-  </div>
-</div>
+OVERVIEW PAGE

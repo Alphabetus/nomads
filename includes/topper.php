@@ -1,17 +1,23 @@
 <?php
 // init
 $loggedInTopper = null;
+// includes
+include "includes/dbConfig.php";
 // topper logged out vars
 $time = time();
 $time = date("H:i:s");
 $timeOut = "Server Time.: " . $time;
-// topper logged in vars
+// check if logged in
 if (isset($_SESSION['player'])){
+  // get logged in user
+  $id = mysqli_escape_string($con, $_SESSION['player']);
+  $uQ = mysqli_query($con, "SELECT * FROM user WHERE id='$id'");
+  $user = mysqli_fetch_array($uQ);
+  $username = $user['username'];
+  // design table
   $loggedInTopper = "
     <td>
-      <a href='/?logout=1'>
-        Logout
-      </a>
+      ".$username."
     </td>
   ";
 }
@@ -23,9 +29,9 @@ if (isset($_SESSION['player'])){
         <b>NOMADS</b>
       </a>
     </td>
+    <?php print $loggedInTopper; ?>
     <td>
       <?php print $timeOut; ?>
     </td>
-    <?php print $loggedInTopper; ?>
   </tr>
 </table>

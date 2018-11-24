@@ -44,8 +44,8 @@ Nomads @ 2018. | by Alphabetus
       case 'welcome':
         include "views/welcome.php";
         break;
-      case 'overview':
-        include "views/game/overview.php";
+      case 'recoverPassword':
+        include "views/recoverPassword.php";
         break;
       default:
         print "<br><br>404 NOT FOUND";

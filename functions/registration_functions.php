@@ -16,6 +16,17 @@ function password_validation($pass1, $pass2){
   return $out;
 }
 // ------------------------------------------------------------------------------------------------------------------------------
+// VERIFY IF PASSWORD IS GOOD
+function checkPassword($pass){
+  if (strlen($pass) < 4 OR strlen($pass) > 32){
+    $out = false;
+  }
+  else{
+    $out = true;
+  }
+  return $out;
+}
+// ------------------------------------------------------------------------------------------------------------------------------
 // EMAIL CONFIRMATION
 function email_validation($email1, $email2){
   if ($email1 == $email2){
