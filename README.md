@@ -1,3 +1,3 @@
-<b>NOMADS - Open Source MMORPG</b>
-
-# THIS GAME IS NOT FINISHED 
+#NOMADS - Open Source MMORPG
+##Browser Game
+Alt-H1
