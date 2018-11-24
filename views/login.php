@@ -1,3 +1,9 @@
+<?php
+// init
+$loginOutput = null;
+// includes
+include ("engine/login_player.php");
+?>
 <head>
   <title>
     N Login
@@ -15,6 +21,7 @@
         <tr>
           <td class="tableCenter">
             <form method="POST" action="">
+              <input type="hidden" name="login" value="1"/>
               <input class="regFormInput" type="text" name="username" size="100%" placeholder="Username" required/><br>
               <br>
               <input class="regFormInput" type="password" name="password" size="100%" placeholder="Password" required/><br>
@@ -24,6 +31,16 @@
           </td>
         </tr>
       </table>
+      <br>
+      <center>
+        <span class="errorOutput">
+          <b>
+            <?php
+              print $loginOutput;
+            ?>
+          </b>
+        </span>
+      </center>
     </div>
   </div>
 </div>

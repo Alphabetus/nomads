@@ -1,4 +1,6 @@
 <?php
+// sessions
+session_start();
 // error display
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -41,6 +43,9 @@ Nomads @ 2018. | by Alphabetus
         break;
       case 'welcome':
         include "views/welcome.php";
+        break;
+      case 'overview':
+        include "views/game/overview.php";
         break;
       default:
         print "<br><br>404 NOT FOUND";

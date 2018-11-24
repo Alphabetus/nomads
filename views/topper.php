@@ -1,17 +1,12 @@
 <?php
-// init
-$loggedInTopper = null;
-// topper logged out vars
 $time = time();
 $time = date("H:i:s");
 $timeOut = "Server Time.: " . $time;
-// topper logged in vars
-if (isset($_SESSION['player'])){
+// logged in topper
+if ($_SESSION['player'] > 0){
   $loggedInTopper = "
     <td>
-      <a href='/?logout=1'>
-        Logout
-      </a>
+      <a href='/?logout=1'>Logout</a>
     </td>
   ";
 }
