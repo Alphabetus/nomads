@@ -25,17 +25,23 @@ Nomads @ 2018. | by Alphabetus
     <?php include "includes/menu.php"; ?>
   </div>
   <div class="resDisplay">
-    [ RESOURCES DISPLAY TABLE ]
+    <?php include "includes/resDisplay.php"; ?>
   </div>
   <div class="display">
     <?php
       $view = $_GET['gameView'];
       switch($view){
+        case 'wiki':
+          include "views/game/wiki.php";
+          break;
         case 'accountSettings':
           include "views/game/accountSettings.php";
           break;
         case 'overview':
           include "views/game/overview.php";
+          break;
+        case 'navigate':
+          include "views/game/navigate.php";
           break;
         default:
           print "<br><br>404 NOT FOUND";

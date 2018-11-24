@@ -12,6 +12,32 @@
     </td>
   </tr>
   <tr>
+    <td class="menuEntries">
+      <a href="/game_index.php?gameView=navigate">
+        Navigate
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <th class='menuHead'>
+      information
+    </th>
+  </tr>
+  <tr>
+    <td class="menuEntries">
+      <a href="/game_index.php?gameView=wiki">
+        Wiki
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="menuEntries">
+      <a href="/game_index.php?gameView=wiki&topic=ship">
+        Ships
+      </a>
+    </td>
+  </tr>
+  <tr>
     <th class="menuHead">
       account menu
     </th>

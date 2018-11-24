@@ -1,0 +1,3 @@
+This list contain all available ships on our Universe.<br>
+Ships are mobile units that can be constructed on any owned Ship Factory.<br>
+Ship costs and construction times might change according to different factors therefore are not displayed on this list.<br>
