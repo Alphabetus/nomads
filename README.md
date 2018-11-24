@@ -1,0 +1,3 @@
+<b>NOMADS - Open Source MMORPG</b>
+
+# THIS GAME IS NOT FINISHED 
