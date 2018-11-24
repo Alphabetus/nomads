@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.3
+- Added Support Center link on footer;
+- Added official gitHub link on footer;
+
 ## Version 1.0.2
 - Added new Unit > Explorer Probe;
 - Added popOut with ships description;
