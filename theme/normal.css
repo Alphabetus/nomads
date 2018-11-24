@@ -276,8 +276,6 @@ a:hover{
   color: rgba(255,255,255,1);
   background: rgb(30, 205, 151);
 }
-
-
 .greenHrefButton:active {
   border: 2px solid rgba(33,224,163,1);
   background: rgba(33,224,163,1);
