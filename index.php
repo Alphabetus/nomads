@@ -27,6 +27,9 @@ Nomads @ 2018. | by Alphabetus
       case 'tos':
         include "views/tos.php";
         break;
+      case 'activation':
+        include "views/activation.php";
+        break;
       case 'splash':
         include "views/splash.php";
         break;
@@ -40,7 +43,7 @@ Nomads @ 2018. | by Alphabetus
         include "views/welcome.php";
         break;
       default:
-        print "404 NOT FOUND";
+        print "<br><br>404 NOT FOUND";
     }
   ?>
 </body>

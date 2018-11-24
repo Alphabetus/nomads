@@ -1,0 +1,5 @@
+The account you are trying to activate is either already activated or non existent.<br>
+#1 > Try to login into your account as it might be activated already.<br>
+#2 > Check your email and verify if you are using the correct activation link.<br>
+<br>
+If none of this works, please contact an administrator and report the error.<br>

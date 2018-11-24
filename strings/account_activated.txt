@@ -1,0 +1,2 @@
+Your account was successfully activated. You can now login and play.<br>
+Good luck, have fun!

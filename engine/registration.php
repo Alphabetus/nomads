@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       return;
     }
     // ALL IS SET > SEND CONFIRMATION EMAIL
-    if (!sendRegistrationEmail($email,$user,"http://followarmy.com/")){
+    if (!sendRegistrationEmail($email,$user)){
       $registerOutput = getString("error_sendmail_register");
       return;
     }

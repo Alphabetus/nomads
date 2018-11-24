@@ -1,0 +1,3 @@
+Something went wrong with your account activation. Please try again.<br>
+If the problem persists please report on our gitHub.<br>
+Thanks.
