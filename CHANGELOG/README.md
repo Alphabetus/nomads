@@ -7,6 +7,8 @@
 - Ship > Information menu added;
 - Settings > Account menu added;
 - Users are able to change password, email and delete account;
+- DataBases emptied;
+- SQLdump updated;
 
 ## Version 1.0.1
 - Added changelog;

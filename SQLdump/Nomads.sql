@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2018 at 08:06 PM
+-- Generation Time: Nov 24, 2018 at 11:11 PM
 -- Server version: 5.7.24-0ubuntu0.16.04.1
 -- PHP Version: 7.0.32-0ubuntu0.16.04.1
 
@@ -30,6 +30,8 @@ CREATE TABLE `unit_model_table` (
   `model_id` int(255) NOT NULL,
   `model_name` varchar(100) NOT NULL,
   `model_type` varchar(100) NOT NULL,
+  `model_description` varchar(500) NOT NULL,
+  `model_speed` int(255) DEFAULT NULL,
   `model_hitpoints` int(255) DEFAULT NULL,
   `model_attack` int(255) DEFAULT NULL,
   `model_cargo` int(255) DEFAULT NULL,
@@ -40,8 +42,9 @@ CREATE TABLE `unit_model_table` (
 -- Dumping data for table `unit_model_table`
 --
 
-INSERT INTO `unit_model_table` (`model_id`, `model_name`, `model_type`, `model_hitpoints`, `model_attack`, `model_cargo`, `model_active`) VALUES
-(1, 'Mother Ship', 'ship', 1000000, 1, 15000, 1);
+INSERT INTO `unit_model_table` (`model_id`, `model_name`, `model_type`, `model_description`, `model_speed`, `model_hitpoints`, `model_attack`, `model_cargo`, `model_active`) VALUES
+(1, 'Mother Ship', 'ship', 'description_ship_1', 1, 1000000, 0, 15000, 1),
+(2, 'Explorer Probe', 'ship', 'description_ship_2', 100, 1, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `unit_model_table`
 --
 ALTER TABLE `unit_model_table`
-  MODIFY `model_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `model_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `unit_table`
 --
