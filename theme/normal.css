@@ -8,15 +8,17 @@
   --buttontext : #034c35;
   --blue : #B0D7FF;
   --whitetransparent : rgba(255, 255, 255, 0.3);
+  --ltext : #dddbdb;
 }
 /* DOC */
 html,body{
   margin: 0;
   padding: 0;
+  color: var(--ltext);
 }
 body{
   background-color: #3c3d3f;
-  color: #EEF1EF;
+  color: var(--ltext);
 }
 footer{
   background-color: var(--bgcolor);
@@ -29,7 +31,7 @@ footer{
   right: 0;
   text-align: right;
   font-size: 12px;
-  color: #EEF1EF;
+  color: var(--ltext);
 }
 hr{
   border-color: var(--lightblue);
@@ -282,4 +284,62 @@ a:hover{
   -moz-transition: none;
   -o-transition: none;
   transition: none;
+}
+/* POPOUT */
+/* Popup container */
+.popout {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+/* The actual popup (appears on top) */
+.popout .popuptext {
+    word-break: normal;
+    visibility: hidden;
+    width: 400px;
+    max-height: 150px;
+    overflow: scroll;
+    background-color: #555;
+    color: var(--ltext);
+    text-align: justify;
+    border-radius: 6px;
+    border-color: var(--lightblue);
+    border-width: 0.5px;
+    border-style: solid;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popout .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popout .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }

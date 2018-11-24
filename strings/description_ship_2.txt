@@ -1,0 +1,3 @@
+<p>Also known as Explorers, they are a disposable unit. It will only work for a limited period of uses.</p>
+<p>Allows you to explore the nearby sectors of the universe and discover what is inside of them.</p>
+<p>They are fast and cheap to build but you are going to need a lot of them.</p>
