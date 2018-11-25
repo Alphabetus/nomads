@@ -22,11 +22,11 @@ include ("engine/login_player.php");
           <td class="tableCenter">
             <form method="POST" action="">
               <input type="hidden" name="login" value="1"/>
-              <input class="regFormInput" type="text" name="username" size="100%" placeholder="Username" required/><br>
+              <input class="regFormInput" type="text" name="username" placeholder="Username" required/><br>
               <br>
-              <input class="regFormInput" type="password" name="password" size="100%" placeholder="Password" required/><br>
+              <input class="regFormInput" type="password" name="password" placeholder="Password" required/><br>
               <br>
-              <input class="button_register" type="submit" size="50" value="LOGIN"/>
+              <input class="button_register" type="submit" value="LOGIN"/>
             </form>
           </td>
         </tr>

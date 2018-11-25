@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.0.4
+- Small fix within form input designs to be more acceptable under mobile devices;
+
 ## Version 1.0.3
 - Added Support Center link on footer;
 - Added official gitHub link on footer;
