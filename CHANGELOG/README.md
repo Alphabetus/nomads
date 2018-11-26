@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.6
+- GPL License attributed to the software;
+- Apache notice added to the distribution;
+
 ## Version 1.0.5
 - Added Location tracker to the top menu. Some functions of it are still undergoing as the map system is being implemented;
 - Started DB structure for Map and Planet System. Moons will come later;
