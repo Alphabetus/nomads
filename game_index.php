@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 // includes
 include "engine/redirect.php";
 include "common/common_functions.php";
+include "common/player_functions.php";
 include "includes/dbConfig.php";
 include "engine/lock.php";
 ?>
@@ -42,6 +43,9 @@ Nomads @ 2018. | by Alphabetus
           break;
         case 'navigate':
           include "views/game/navigate.php";
+          break;
+        case 'galactic_market':
+          include "views/game/galactic_market.php";
           break;
         default:
           print "<br><br>404 NOT FOUND";

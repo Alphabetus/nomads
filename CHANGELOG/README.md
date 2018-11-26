@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## Version 1.0.5
+- Added Location tracker to the top menu. Some functions of it are still undergoing as the map system is being implemented;
+- Started DB structure for Map and Planet System. Moons will come later;
+- Added Galactic Market page with basic functionality;
+- Added Mothership to the Galactic Market;
+- Available workers requirement assigned to ships;
+- Created GOLD currency;
+- Major DB structure update;
+- Databases emptied;
+- SQLdump updated;
+
 ## Version 1.0.4
 - Small fix within form input designs to be more acceptable under mobile devices;
 

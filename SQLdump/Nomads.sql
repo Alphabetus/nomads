@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2018 at 11:11 PM
+-- Generation Time: Nov 26, 2018 at 04:04 PM
 -- Server version: 5.7.24-0ubuntu0.16.04.1
 -- PHP Version: 7.0.32-0ubuntu0.16.04.1
 
@@ -23,6 +23,93 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `galactic_market_buy_table`
+--
+
+CREATE TABLE `galactic_market_buy_table` (
+  `listing_id` int(255) NOT NULL,
+  `listing_model` int(255) NOT NULL,
+  `listing_table` varchar(100) NOT NULL,
+  `listing_value` int(255) NOT NULL,
+  `listing_currency` varchar(100) NOT NULL,
+  `listing_active` int(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `galactic_market_buy_table`
+--
+
+INSERT INTO `galactic_market_buy_table` (`listing_id`, `listing_model`, `listing_table`, `listing_value`, `listing_currency`, `listing_active`) VALUES
+(1, 1, 'unit', 100, 'workers', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `map_default`
+--
+
+CREATE TABLE `map_default` (
+  `map_id` int(255) NOT NULL,
+  `map_name` varchar(100) NOT NULL,
+  `map_X` int(255) NOT NULL,
+  `map_Y` int(255) NOT NULL,
+  `map_star` int(255) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `map_default`
+--
+
+INSERT INTO `map_default` (`map_id`, `map_name`, `map_X`, `map_Y`, `map_star`) VALUES
+(1, 'Solar System', 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `star_default`
+--
+
+CREATE TABLE `star_default` (
+  `star_id` int(255) NOT NULL,
+  `star_name` varchar(100) NOT NULL,
+  `star_diameter` int(255) NOT NULL,
+  `star_heat` int(255) NOT NULL,
+  `star_gravity` int(255) NOT NULL,
+  `star_map` int(255) NOT NULL,
+  `star_model` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `star_default`
+--
+
+INSERT INTO `star_default` (`star_id`, `star_name`, `star_diameter`, `star_heat`, `star_gravity`, `star_map`, `star_model`) VALUES
+(1, 'Sun', 1300000, 5500, 130, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `star_model`
+--
+
+CREATE TABLE `star_model` (
+  `model_id` int(255) NOT NULL,
+  `model_name` varchar(1500) NOT NULL,
+  `model_diameter_range` varchar(1500) NOT NULL,
+  `model_heat_range` varchar(1500) NOT NULL,
+  `model_gravity_range` varchar(1500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `star_model`
+--
+
+INSERT INTO `star_model` (`model_id`, `model_name`, `model_diameter_range`, `model_heat_range`, `model_gravity_range`) VALUES
+(1, 'Red Giant', '1000000;1500000', '5000;6000', '100;150');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unit_model_table`
 --
 
@@ -35,6 +122,7 @@ CREATE TABLE `unit_model_table` (
   `model_hitpoints` int(255) DEFAULT NULL,
   `model_attack` int(255) DEFAULT NULL,
   `model_cargo` int(255) DEFAULT NULL,
+  `model_require_workers` int(255) NOT NULL DEFAULT '0',
   `model_active` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,9 +130,9 @@ CREATE TABLE `unit_model_table` (
 -- Dumping data for table `unit_model_table`
 --
 
-INSERT INTO `unit_model_table` (`model_id`, `model_name`, `model_type`, `model_description`, `model_speed`, `model_hitpoints`, `model_attack`, `model_cargo`, `model_active`) VALUES
-(1, 'Mother Ship', 'ship', 'description_ship_1', 1, 1000000, 0, 15000, 1),
-(2, 'Explorer Probe', 'ship', 'description_ship_2', 100, 1, 0, 0, 1);
+INSERT INTO `unit_model_table` (`model_id`, `model_name`, `model_type`, `model_description`, `model_speed`, `model_hitpoints`, `model_attack`, `model_cargo`, `model_require_workers`, `model_active`) VALUES
+(1, 'Mother Ship', 'ship', 'description_ship_1', 1, 1000000, 0, 15000, 100, 1),
+(2, 'Explorer Probe', 'ship', 'description_ship_2', 100, 1, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +161,9 @@ CREATE TABLE `user` (
   `email` varchar(1000) NOT NULL,
   `active` int(1) NOT NULL DEFAULT '0',
   `password` varchar(40) NOT NULL,
-  `workers` int(255) NOT NULL DEFAULT '100'
+  `workers` int(255) NOT NULL DEFAULT '100',
+  `gold` int(255) NOT NULL DEFAULT '0',
+  `location_ship` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,6 +181,30 @@ CREATE TABLE `user_token` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `galactic_market_buy_table`
+--
+ALTER TABLE `galactic_market_buy_table`
+  ADD PRIMARY KEY (`listing_id`);
+
+--
+-- Indexes for table `map_default`
+--
+ALTER TABLE `map_default`
+  ADD PRIMARY KEY (`map_id`);
+
+--
+-- Indexes for table `star_default`
+--
+ALTER TABLE `star_default`
+  ADD PRIMARY KEY (`star_id`);
+
+--
+-- Indexes for table `star_model`
+--
+ALTER TABLE `star_model`
+  ADD PRIMARY KEY (`model_id`);
 
 --
 -- Indexes for table `unit_model_table`
@@ -124,6 +238,26 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `galactic_market_buy_table`
+--
+ALTER TABLE `galactic_market_buy_table`
+  MODIFY `listing_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `map_default`
+--
+ALTER TABLE `map_default`
+  MODIFY `map_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `star_default`
+--
+ALTER TABLE `star_default`
+  MODIFY `star_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `star_model`
+--
+ALTER TABLE `star_model`
+  MODIFY `model_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `unit_model_table`
 --

@@ -45,6 +45,9 @@ function generateShipsTable(){
       <th class='wikiHeader'>
         Speed
       </th>
+      <th class='wikiHeader'>
+        Workers
+      </th>
     </tr>
   ";
   // loop for rows
@@ -77,6 +80,9 @@ function generateShipsTable(){
         </td>
         <td class='wikiTd'>
           ".$row['model_speed']."
+        </td>
+        <td class='wikiTd'>
+          ".$row['model_require_workers']."
         </td>
       </tr>
     ";
