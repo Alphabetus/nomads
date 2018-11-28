@@ -8,7 +8,7 @@ $time = time();
 $time = date("H:i:s");
 $timeOut = "Server Time.: " . $time;
 // check if logged in
-if (isset($_SESSION['player'])){
+if (isset($_SESSION['player']) AND getUserSession() > 0){
   // generate logo
   $topperLogo = "<a href='game_index.php'>NOMADS</a>";
   // get logged in user

@@ -1,5 +1,5 @@
 <?php
-if(!$_SESSION['player']){
+if(!$_SESSION['player'] OR getUserSession() == 0){
   header("Location: /?view=login");
 }
 else{

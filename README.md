@@ -25,4 +25,5 @@ Changelog is visible [HERE](https://github.com/Alphabetus/Nomads/tree/master/CHA
  3. Import `SQLdump/Nomads.sql` to your DataBase;
  4. Change the content of `/includes/dbConfig_example.php` to fit your server and user configurations;
  5. Change the filename from `dbConfig_example.php` to `dbConfig.php`;
- 6. Done.
+ 6. Install the required [Cronjobs](https://github.com/Alphabetus/Nomads/tree/master/cronjobs);
+ 7. Done.

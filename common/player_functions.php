@@ -58,4 +58,20 @@ function getPlayerGold(){
   return $out;
 }
 // --------------------------------------------------------------------------------------------------------------------------------------------
+// ALTER LAST ACTION FIELD
+function updateLastAction(){
+  include "includes/dbConfig.php";
+  $id = getUserID();
+  $ip = getIP();
+  $now = getTime();
+  $time = time();
+  $updateUserQ = mysqli_query($con, "UPDATE user SET lastAction='$now' WHERE id='$id'");
+  $updateSessionQ = mysqli_query($con, "UPDATE user_session SET session_timestamp='$time' WHERE session_userID='$id' AND session_ip='$ip'");
+  if (!$updateUserQ OR !$updateSessionQ){
+    print "<br><br>" . mysqli_error($con);
+    return;
+  }
+  return;
+}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 ?>

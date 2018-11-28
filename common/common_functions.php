@@ -7,7 +7,7 @@ if (isset($_GET['logout'])){
   }
 }
 // ------------------------------------------------------------------------------------------------------------------------------
-// GAMEVIEW CHECKER > REDIRECT IF NONE 
+// GAMEVIEW CHECKER > REDIRECT IF NONE
 function fixGameView(){
   if (!isset($_GET['gameView'])){
     header("Location: /game_index.php?gameView=overview");
@@ -25,6 +25,12 @@ function getString($id){
 // ------------------------------------------------------------------------------------------------------------------------------
 // LOGOUT
 function logout(){
+  include "includes/dbConfig.php";
+  // vars
+  $uID = getUserID();
+  // delete SQL session
+  $delQ = mysqli_query($con, "DELETE FROM user_session WHERE session_userID='$uID'");
+  // php session destroyer
   session_destroy();
   session_unset();
   unset($_SESSION['player']);
@@ -49,4 +55,45 @@ function getUserEmail(){
   return $out;
 }
 // ------------------------------------------------------------------------------------------------------------------------------
+// GENERATE DEFAULT TIME
+function getTime(){
+  $now = time();
+  $now = date('y-m-d - H:i:s');
+  return $now;
+}
+// ------------------------------------------------------------------------------------------------------------------------------
+// GET VISITOR IP
+function getIP(){
+  if ( getenv("HTTP_CLIENT_IP") ) {
+        $ip = getenv("HTTP_CLIENT_IP");
+    } elseif ( getenv("HTTP_X_FORWARDED_FOR") ) {
+        $ip = getenv("HTTP_X_FORWARDED_FOR");
+        if ( strstr($ip, ',') ) {
+            $tmp = explode(',', $ip);
+            $ip = trim($tmp[0]);
+        }
+    } else {
+        $ip = getenv("REMOTE_ADDR");
+    }
+  return $ip;
+}
+// ------------------------------------------------------------------------------------------------------------------------------
+// GET SERVER SIDED SESSION
+function getUserSession(){
+  include "includes/dbConfig.php";
+  $id = getUserID();
+  $ip = getIP();
+  $getSessionQ = mysqli_query($con, "SELECT * FROM user_session WHERE session_userID='$id' AND session_ip='$ip'");
+  $sessionCheck = mysqli_num_rows($getSessionQ);
+  // validate if there is session
+  if ($sessionCheck < 1){
+    $sessionID = 0;
+  }
+  else{
+    $sessionA = mysqli_fetch_array($getSessionQ);
+    $sessionID = $sessionA['session_id'];
+  }
+  return $sessionID;
+}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 ?>

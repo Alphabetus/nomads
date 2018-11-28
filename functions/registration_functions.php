@@ -132,7 +132,8 @@ function createUser($username,$email,$password){
   $username = mysqli_escape_string($con, $username);
   $email = mysqli_escape_string($con, $email);
   $password = mysqli_escape_string($con, $password);
-  $createQ = mysqli_query($con, "INSERT INTO user (username,email,password) VALUES ('$username','$email','$password')");
+  $createdDate = getTime();
+  $createQ = mysqli_query($con, "INSERT INTO user (username,email,password,createdAt) VALUES ('$username','$email','$password','$createdDate')");
   // deal with activation token
   $token = uniqid();
   $createTokenQ = mysqli_query($con, "INSERT INTO user_token (token_username,token_token) VALUES ('$username','$token')");

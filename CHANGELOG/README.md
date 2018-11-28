@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## Version 1.0.9
+- Several security improvements;
+- Positioning fields added to unit_table;
+- Last action date and creation date fields added to user table;
+- Last action update set on every in game click;
+- Created cronjobs directory;
+- Added user session killer to cronjobs;
+- User login session is now stored on DB and compared with cookie;
+- Added DB table to handle game settings;
+- SQL dump structure altered;
+- SQL truncated and updated;
+
 ## Version 1.0.8
 - Bug fix on topper module redirection;
 

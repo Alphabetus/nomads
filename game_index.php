@@ -1,6 +1,8 @@
 <?php
 // sessions
 session_start();
+// Time
+date_default_timezone_set('Europe/Berlin');
 // error display
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -13,6 +15,8 @@ include "includes/dbConfig.php";
 include "engine/lock.php";
 // url validation
 fixGameView();
+// update last action
+updateLastAction();
 ?>
 <html>
 <!--

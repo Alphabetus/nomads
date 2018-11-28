@@ -1,4 +1,4 @@
 This is the default MYSQL dump.
-Import all tables into your DataBase for the system before running the scripts.
+Import it into your DataBase before running the scripts.
 
-<b>DATABASE NAME MUST BE NOMADS</b>
+<b>DATABASE NAME MUST BE Nomads</b>

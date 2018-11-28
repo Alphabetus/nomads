@@ -1,6 +1,8 @@
 <?php
 // sessions
 session_start();
+// Time
+date_default_timezone_set('Europe/Berlin');
 // error display
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,6 +11,8 @@ error_reporting(E_ALL);
 include "engine/redirect.php";
 include "common/common_functions.php";
 include "includes/dbConfig.php";
+// TEST PRINTS
+
 ?>
 <html>
 <?php include "includes/head.php" ?>
