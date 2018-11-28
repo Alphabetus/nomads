@@ -1,0 +1,2 @@
+Function genBuyTable() is outdated.<br>
+Please report.

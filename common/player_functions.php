@@ -39,6 +39,15 @@ function getMotherShips_total(){
   }
 }
 // --------------------------------------------------------------------------------------------------------------------------------------------
+// GET PLAYER UNIT TOTALS
+function getTotalUnitsByID($id){
+  include "includes/dbConfig.php";
+  $uID = getUserID();
+  $unitQ = mysqli_query($con, "SELECT * FROM unit_table WHERE unit_owner='$uID' AND unit_model='$id' AND unit_destroyed=0");
+  $unitNum = mysqli_num_rows($unitQ);
+  return $unitNum;
+}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 // GET PLAYER GOLD
 function getPlayerGold(){
   include "includes/dbConfig.php";

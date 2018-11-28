@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.0.7
+- Galactic Market item purchase limits implemented;
+- Validation of Galactic Market functions and buttons was adapted to limits;
+- Graphical adjustment on 'no buy' scenario;
+- Sensitive DB tables truncated;
+- SQL dump updated;
+- SQL dump structure altered;
+
 ## Version 1.0.6
 - GPL License attributed to the software;
 - Apache notice added to the distribution;
