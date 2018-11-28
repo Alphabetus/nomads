@@ -7,6 +7,14 @@ if (isset($_GET['logout'])){
   }
 }
 // ------------------------------------------------------------------------------------------------------------------------------
+// GAMEVIEW CHECKER > REDIRECT IF NONE 
+function fixGameView(){
+  if (!isset($_GET['gameView'])){
+    header("Location: /game_index.php?gameView=overview");
+  }
+  return;
+}
+// ------------------------------------------------------------------------------------------------------------------------------
 // LOAD STRING FROM FOLDER
 function getString($id){
   $fName = "strings/" . $id . ".txt";

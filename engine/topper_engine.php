@@ -1,4 +1,6 @@
 <?php
+// init
+$topperLogo = "<a href='/'>NOMADS</a>";
 // includes
 include "functions/topper_functions.php";
 // topper logged out vars
@@ -7,6 +9,8 @@ $time = date("H:i:s");
 $timeOut = "Server Time.: " . $time;
 // check if logged in
 if (isset($_SESSION['player'])){
+  // generate logo
+  $topperLogo = "<a href='game_index.php'>NOMADS</a>";
   // get logged in user
   $id = getUserID();
   $uQ = mysqli_query($con, "SELECT * FROM user WHERE id='$id'");

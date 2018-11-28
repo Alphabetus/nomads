@@ -11,6 +11,8 @@ include "common/common_functions.php";
 include "common/player_functions.php";
 include "includes/dbConfig.php";
 include "engine/lock.php";
+// url validation
+fixGameView();
 ?>
 <html>
 <!--

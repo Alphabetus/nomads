@@ -1,15 +1,14 @@
 <?php
 // init
 $loggedInTopper = null;
+$topperLogo = null;
 // includes
 include "engine/topper_engine.php";
 ?>
 <table class="topperTable">
   <tr>
     <td>
-      <a href="/">
-        <b>NOMADS</b>
-      </a>
+      <?php print $topperLogo; ?>
     </td>
     <?php print $loggedInTopper; ?>
     <td>

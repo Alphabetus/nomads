@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.0.8
+- Bug fix on topper module redirection;
+
 ## Version 1.0.7
 - Galactic Market item purchase limits implemented;
 - Validation of Galactic Market functions and buttons was adapted to limits;
