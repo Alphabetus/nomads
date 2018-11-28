@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.0.10
+- Location system is now attached to Motherships;
+- System is now halfway prepared for multiple Motherships;
+- Navigation System initialised;
+- Graphics upload;
+
 ## Version 1.0.9
 - Several security improvements;
 - Positioning fields added to unit_table;

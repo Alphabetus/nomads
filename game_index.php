@@ -17,6 +17,8 @@ include "engine/lock.php";
 fixGameView();
 // update last action
 updateLastAction();
+// fix location ship if empty
+assignMotherShip();
 ?>
 <html>
 <!--

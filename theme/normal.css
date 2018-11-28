@@ -93,6 +93,15 @@ a:hover{
   padding: 15px;
   vertical-align: middle;
 }
+.mapBakcground{
+  height: 10vw;
+  width: 10vw;
+}
+.mapBakcground img{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 /* DISPLAY HANDLER */
 .resDisplay{
   text-align: justify;
@@ -159,6 +168,25 @@ a:hover{
   opacity: 1;
 }
 /* TABLE HANDLING */
+.navTable{
+  width: 100%;
+  font-size: 12px;
+  border-style: solid;
+  border-width: 0.5;
+  border-color: var(--whitetransparent);
+  padding: 5px;
+  vertical-align: middle;
+}
+.navStar{
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+.navHeader{
+  color: var(--lightblue);
+  font-weight: bold;
+  font-size: 16px;
+}
 .wikiHeader{
   color: var(--lightblue);
   font-weight: bold;
