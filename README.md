@@ -11,6 +11,11 @@ Game functionality is being added on regular updates however the developer does 
 This game is not yet designed for mobile devices.
 A new template will be added exclusively for smartphones once the game is playable.
 
+## Artwork credits attribution
+
+The entire artwork collection for this project is being designed by:
+[huper123gui](https://www.deviantart.com/huper123gui)
+
 ## Live Example
 Current Master branch is hosted at: [http://nomads.followarmy.com/](http://nomads.followarmy.com/).
 Give us a visit and test it.
