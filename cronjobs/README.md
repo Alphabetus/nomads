@@ -7,6 +7,5 @@
   4. Done;
 
 ## Recommended settings
-`# NOMADS CRONTAB  
-*/20 * * * * php /var/www/Nomads/cronjobs/session_killer.php
-`
+`# NOMADS CRONTAB`  
+`*/20 * * * * php /var/www/Nomads/cronjobs/session_killer.php`
