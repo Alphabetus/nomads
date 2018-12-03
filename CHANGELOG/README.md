@@ -7,6 +7,7 @@
 - Star generated table added to DB;
 - Added popOut to enlarge the space for information and interaction while navigating;
 - Graphical content upload to feed the universe generator engine;
+- New DB dump;
 
 ## Version 1.0.10
 - Location system is now attached to Motherships;
