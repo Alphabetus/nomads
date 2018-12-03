@@ -96,6 +96,7 @@ a:hover{
 .mapBakcground{
   height: 10vw;
   width: 10vw;
+  background-size: contain;
 }
 .mapBakcground img{
   position: relative;
@@ -169,16 +170,14 @@ a:hover{
 }
 /* TABLE HANDLING */
 .navTable{
-  width: 100%;
   font-size: 12px;
   border-style: solid;
   border-width: 0.5;
   border-color: var(--whitetransparent);
+  border-spacing: 0;
   padding: 5px;
-  vertical-align: middle;
 }
 .navStar{
-  margin: auto;
   vertical-align: middle;
   text-align: center;
 }
@@ -186,6 +185,7 @@ a:hover{
   color: var(--lightblue);
   font-weight: bold;
   font-size: 16px;
+  text-align: center;
 }
 .wikiHeader{
   color: var(--lightblue);

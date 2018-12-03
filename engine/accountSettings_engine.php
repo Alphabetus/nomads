@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       return;
     }
     else{
-      header("Location: /");
+      $outputAccountSettings = getString("account_deleted") . "<br><br>";
       return;
     }
   }

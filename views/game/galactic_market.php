@@ -5,6 +5,11 @@ $galMarketDisplay = null;
 include "engine/galactic_market_engine.php";
 // file
 ?>
+<head>
+  <title>
+    N Galactic Market
+  </title>
+</head>
 <h2>GALACTIC MARKET</h2>
 <?php print getString("galactic_market_description");?><br>
 <br>

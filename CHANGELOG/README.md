@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.0.11
+- Fixed missing titles during in game screens;
+- Fixed delete account header issue;
+- Navigation table added with a basic design;
+- Star generated table added to DB;
+- Added popOut to enlarge the space for information and interaction while navigating;
+- Graphical content upload to feed the universe generator engine;
+
 ## Version 1.0.10
 - Location system is now attached to Motherships;
 - System is now halfway prepared for multiple Motherships;

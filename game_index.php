@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 // includes
 include "engine/redirect.php";
 include "common/common_functions.php";
+include "common/generator_functions.php";
 include "common/player_functions.php";
 include "includes/dbConfig.php";
 include "engine/lock.php";

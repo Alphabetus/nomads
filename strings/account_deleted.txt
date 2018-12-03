@@ -1,0 +1,1 @@
+Account successfully deleted. Your data has been deleted from our database.

@@ -112,9 +112,11 @@ function deleteUser($pass){
     return $out;
   }
   // validations should be placed above this line
+  // validations done > delete session
+  $delSessQ = mysqli_query($con, "DELETE FROM user_session WHERE session_userID='$uID'");
   // validations done > delete user
   $deleteQ = mysqli_query($con, "DELETE FROM user WHERE id='$uID'");
-  if (!$deleteQ){
+  if (!$deleteQ OR !$delSessQ){
     $out = false;
     print mysqli_error($con);
     return $out;

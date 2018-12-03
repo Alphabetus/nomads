@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2018 at 02:15 PM
+-- Generation Time: Dec 03, 2018 at 03:49 PM
 -- Server version: 5.7.24-0ubuntu0.16.04.1
 -- PHP Version: 7.0.32-0ubuntu0.16.04.1
 
@@ -73,15 +73,32 @@ CREATE TABLE `map_default` (
   `map_name` varchar(100) NOT NULL,
   `map_X` int(255) NOT NULL,
   `map_Y` int(255) NOT NULL,
-  `map_star` int(255) NOT NULL DEFAULT '0'
+  `map_star` int(255) NOT NULL DEFAULT '0',
+  `map_image` varchar(500) NOT NULL,
+  `map_tile` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `map_default`
 --
 
-INSERT INTO `map_default` (`map_id`, `map_name`, `map_X`, `map_Y`, `map_star`) VALUES
-(1, 'Solar System', 0, 0, 0);
+INSERT INTO `map_default` (`map_id`, `map_name`, `map_X`, `map_Y`, `map_star`, `map_image`, `map_tile`) VALUES
+(1, 'Solar System', 0, 0, 1, '0', 'solarsystem_1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `map_generated`
+--
+
+CREATE TABLE `map_generated` (
+  `mapGen_id` int(255) NOT NULL,
+  `mapGen_name` varchar(1000) NOT NULL,
+  `mapGen_X` int(255) NOT NULL,
+  `mapGen_Y` int(255) NOT NULL,
+  `mapGen_star` int(255) NOT NULL,
+  `mapGen_tile` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -96,15 +113,33 @@ CREATE TABLE `star_default` (
   `star_heat` int(255) NOT NULL,
   `star_gravity` int(255) NOT NULL,
   `star_map` int(255) NOT NULL,
-  `star_model` int(255) NOT NULL
+  `star_model` int(255) NOT NULL,
+  `star_image` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `star_default`
 --
 
-INSERT INTO `star_default` (`star_id`, `star_name`, `star_diameter`, `star_heat`, `star_gravity`, `star_map`, `star_model`) VALUES
-(1, 'Sun', 1300000, 5500, 130, 1, 1);
+INSERT INTO `star_default` (`star_id`, `star_name`, `star_diameter`, `star_heat`, `star_gravity`, `star_map`, `star_model`, `star_image`) VALUES
+(1, 'Sun', 1300000, 5500, 130, 1, 1, 'default_sun');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `star_generated`
+--
+
+CREATE TABLE `star_generated` (
+  `starGen_ID` int(255) NOT NULL,
+  `starGen_name` varchar(500) NOT NULL,
+  `starGen_diameter` int(255) NOT NULL,
+  `starGen_heat` int(255) NOT NULL,
+  `starGeb_gravity` int(255) NOT NULL,
+  `starGen_map` int(255) NOT NULL,
+  `starGen_model` int(255) NOT NULL,
+  `starGen_image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -239,10 +274,22 @@ ALTER TABLE `map_default`
   ADD PRIMARY KEY (`map_id`);
 
 --
+-- Indexes for table `map_generated`
+--
+ALTER TABLE `map_generated`
+  ADD PRIMARY KEY (`mapGen_id`);
+
+--
 -- Indexes for table `star_default`
 --
 ALTER TABLE `star_default`
   ADD PRIMARY KEY (`star_id`);
+
+--
+-- Indexes for table `star_generated`
+--
+ALTER TABLE `star_generated`
+  ADD PRIMARY KEY (`starGen_ID`);
 
 --
 -- Indexes for table `star_model`
@@ -304,10 +351,20 @@ ALTER TABLE `game_settings`
 ALTER TABLE `map_default`
   MODIFY `map_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `map_generated`
+--
+ALTER TABLE `map_generated`
+  MODIFY `mapGen_id` int(255) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `star_default`
 --
 ALTER TABLE `star_default`
   MODIFY `star_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `star_generated`
+--
+ALTER TABLE `star_generated`
+  MODIFY `starGen_ID` int(255) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `star_model`
 --
