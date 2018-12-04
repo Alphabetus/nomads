@@ -8,6 +8,7 @@
 - Basic exploring on nearby sectors created;
 - Generation of a star renames the system for the star name;
 - Email confirmation email text slightly altered;
+- Added basic movement system, you can now move your ship;
 
 ## Version 1.0.11
 - Fixed missing titles during in game screens;
