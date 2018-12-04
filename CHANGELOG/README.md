@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## Version 1.0.12
+- Topper function readjusted to avoid some error scenarios;
+- Move here button added on navigation menu;
+- Default number of map tiles added to settings table;
+- Setting added to define the percentage of star generation over empty tiles;
+- Basic exploring on nearby sectors created;
+- Generation of a star renames the system for the star name;
+- Email confirmation email text slightly altered;
+
 ## Version 1.0.11
 - Fixed missing titles during in game screens;
 - Fixed delete account header issue;

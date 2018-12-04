@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2018 at 03:49 PM
+-- Generation Time: Dec 04, 2018 at 10:36 PM
 -- Server version: 5.7.24-0ubuntu0.16.04.1
 -- PHP Version: 7.0.32-0ubuntu0.16.04.1
 
@@ -60,7 +60,12 @@ CREATE TABLE `game_settings` (
 --
 
 INSERT INTO `game_settings` (`game_setting_ID`, `game_setting_name`, `game_setting_value`) VALUES
-(1, 'user_session_validity_minutes', '60');
+(1, 'user_session_validity_minutes', '60'),
+(2, 'number_of_default_map_tiles', '50'),
+(3, 'star_spawn_percentage', '4'),
+(4, 'star_gravity_factor', '1000'),
+(5, 'number_of_default_star_models', '4'),
+(6, 'number_of_default_planet_models', '4');
 
 -- --------------------------------------------------------
 
@@ -93,12 +98,54 @@ INSERT INTO `map_default` (`map_id`, `map_name`, `map_X`, `map_Y`, `map_star`, `
 
 CREATE TABLE `map_generated` (
   `mapGen_id` int(255) NOT NULL,
-  `mapGen_name` varchar(1000) NOT NULL,
+  `mapGen_name` varchar(1000) DEFAULT NULL,
+  `mapGen_discoveredBy` int(255) NOT NULL,
   `mapGen_X` int(255) NOT NULL,
   `mapGen_Y` int(255) NOT NULL,
-  `mapGen_star` int(255) NOT NULL,
-  `mapGen_tile` varchar(500) NOT NULL
+  `mapGen_star` int(255) NOT NULL DEFAULT '0',
+  `mapGen_tile` varchar(500) NOT NULL,
+  `mapGen_createdAt` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planet_generated`
+--
+
+CREATE TABLE `planet_generated` (
+  `planet_id` int(255) NOT NULL,
+  `planet_name` varchar(200) NOT NULL,
+  `planet_star` int(255) NOT NULL,
+  `planet_diameter` int(100) NOT NULL,
+  `planet_slots` int(255) NOT NULL,
+  `planet_max_temp` int(255) NOT NULL,
+  `planet_min_temp` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planet_model`
+--
+
+CREATE TABLE `planet_model` (
+  `model_id` int(255) NOT NULL,
+  `model_name` varchar(400) NOT NULL,
+  `model_diameter_range` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `planet_model`
+--
+
+INSERT INTO `planet_model` (`model_id`, `model_name`, `model_diameter_range`) VALUES
+(1, 'typeA', '10000;15000'),
+(2, 'typeB', '5000;7500'),
+(3, 'typeC', '100000;120000'),
+(4, 'typeD', '25000;35000'),
+(5, 'typeE', '7500;15000'),
+(6, 'typeF', '10000;20000');
 
 -- --------------------------------------------------------
 
@@ -135,7 +182,7 @@ CREATE TABLE `star_generated` (
   `starGen_name` varchar(500) NOT NULL,
   `starGen_diameter` int(255) NOT NULL,
   `starGen_heat` int(255) NOT NULL,
-  `starGeb_gravity` int(255) NOT NULL,
+  `starGen_gravity` int(255) NOT NULL,
   `starGen_map` int(255) NOT NULL,
   `starGen_model` int(255) NOT NULL,
   `starGen_image` varchar(255) NOT NULL
@@ -280,6 +327,18 @@ ALTER TABLE `map_generated`
   ADD PRIMARY KEY (`mapGen_id`);
 
 --
+-- Indexes for table `planet_generated`
+--
+ALTER TABLE `planet_generated`
+  ADD PRIMARY KEY (`planet_id`);
+
+--
+-- Indexes for table `planet_model`
+--
+ALTER TABLE `planet_model`
+  ADD PRIMARY KEY (`model_id`);
+
+--
 -- Indexes for table `star_default`
 --
 ALTER TABLE `star_default`
@@ -344,7 +403,7 @@ ALTER TABLE `galactic_market_buy_table`
 -- AUTO_INCREMENT for table `game_settings`
 --
 ALTER TABLE `game_settings`
-  MODIFY `game_setting_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `game_setting_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `map_default`
 --
@@ -355,6 +414,16 @@ ALTER TABLE `map_default`
 --
 ALTER TABLE `map_generated`
   MODIFY `mapGen_id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `planet_generated`
+--
+ALTER TABLE `planet_generated`
+  MODIFY `planet_id` int(255) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `planet_model`
+--
+ALTER TABLE `planet_model`
+  MODIFY `model_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `star_default`
 --

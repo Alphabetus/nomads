@@ -9,6 +9,7 @@
   --blue : #B0D7FF;
   --whitetransparent : rgba(255, 255, 255, 0.3);
   --ltext : #dddbdb;
+  --moveto : #060242;
 }
 /* DOC */
 html,body{
@@ -255,6 +256,15 @@ a:hover{
   font-size: 14px;
 }
 /* BUTTONS */
+.button_nav{
+  font-size: 14px;
+  background-color: var(--moveto);
+  padding: 5px;
+  border-radius: 4px;
+  border-style: none;
+  cursor: pointer;
+  color: var(--ltext);
+}
 .button_ok{
   font-size: 16px;
   background: var(--lightblue);

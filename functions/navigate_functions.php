@@ -64,21 +64,21 @@ function genNavTable(){
             <div class='mapBakcground popout' onClick='popOut(".$sqID_1.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq1_x,$sq1_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq1_x,$sq1_y)."
-              <span class='popuptext' id='".$sqID_1."'>".genTileMechanics($sq1_x,$sq1_y)."</span>
+              <span class='popuptext' id='".$sqID_1."'>".genTileMechanics($sq1_x,$sq1_y,true)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_2.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq2_x,$sq2_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq2_x,$sq2_y)."
-              <span class='popuptext' id='".$sqID_2."'>".genTileMechanics($sq2_x,$sq2_y)."</span>
+              <span class='popuptext' id='".$sqID_2."'>".genTileMechanics($sq2_x,$sq2_y,true)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_3.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq3_x,$sq3_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq3_x,$sq3_y)."
-              <span class='popuptext' id='".$sqID_3."'>".genTileMechanics($sq3_x,$sq3_y)."</span>
+              <span class='popuptext' id='".$sqID_3."'>".genTileMechanics($sq3_x,$sq3_y,true)."</span>
             </div>
           </td>
         </tr>
@@ -88,21 +88,21 @@ function genNavTable(){
             <div class='mapBakcground popout' onClick='popOut(".$sqID_4.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq4_x,$sq4_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq4_x,$sq4_y)."
-              <span class='popuptext' id='".$sqID_4."'>".genTileMechanics($sq4_x,$sq4_y)."</span>
+              <span class='popuptext' id='".$sqID_4."'>".genTileMechanics($sq4_x,$sq4_y,true)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_5.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($x,$y).".png)'>
               <span class='helper'></span>
               ".getStarImage($x,$y)."
-              <span class='popuptext' id='".$sqID_5."'>".genTileMechanics($x,$y)."</span>
+              <span class='popuptext' id='".$sqID_5."'>".genTileMechanics($x,$y,false)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_6.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq6_x,$sq6_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq6_x,$sq6_y)."
-              <span class='popuptext' id='".$sqID_6."'>".genTileMechanics($sq6_x,$sq6_y)."</span>
+              <span class='popuptext' id='".$sqID_6."'>".genTileMechanics($sq6_x,$sq6_y,true)."</span>
             </div>
           </td>
         </tr>
@@ -112,21 +112,21 @@ function genNavTable(){
             <div class='mapBakcground popout' onClick='popOut(".$sqID_7.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq7_x,$sq7_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq7_x,$sq7_y)."
-              <span class='popuptext' id='".$sqID_7."'>".genTileMechanics($sq7_x,$sq7_y)."</span>
+              <span class='popuptext' id='".$sqID_7."'>".genTileMechanics($sq7_x,$sq7_y,true)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_8.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq8_x,$sq8_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq8_x,$sq8_y)."
-              <span class='popuptext' id='".$sqID_8."'>".genTileMechanics($sq8_x,$sq8_y)."</span>
+              <span class='popuptext' id='".$sqID_8."'>".genTileMechanics($sq8_x,$sq8_y,true)."</span>
             </div>
           </td>
           <td class='navStar'>
             <div class='mapBakcground popout' onClick='popOut(".$sqID_9.")' style='background-image: url(/img/map_tiles/".retriveMapTile_img($sq9_x,$sq9_y).".png)'>
               <span class='helper'></span>
               ".getStarImage($sq9_x,$sq9_y)."
-              <span class='popuptext' id='".$sqID_9."'>".genTileMechanics($sq9_x,$sq9_y)."</span>
+              <span class='popuptext' id='".$sqID_9."'>".genTileMechanics($sq9_x,$sq9_y,true)."</span>
             </div>
           </td>
         </tr>
@@ -137,7 +137,7 @@ function genNavTable(){
 }
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 // GENERATE MAP MECHANICS POPOUT
-function genTileMechanics($x,$y){
+function genTileMechanics($x,$y,$notCenter){
   // init & includes
   include "includes/dbConfig.php";
   $out = null;
@@ -169,11 +169,50 @@ function genTileMechanics($x,$y){
   $out .= "<hr>";
   $out .= "INFORMATION ABOUT SYSTEM POPULATION AND RESOURCES";
   $out .= "<hr>";
-  $out .= "BUTTONS";
+  // button div start
+  $out .= "<div class='movePanel'>";
+  // button generator engines span
+  $out .= button_moveHere($x,$y,$notCenter);
+  $out .= button_exporeHere($x,$y,$notCenter);
+  // end button div
+  $out .= "</div>";
   // final return
   return $out;
 }
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
+// MOVE BUTTON GENERATION
+function button_moveHere($x,$y,$notCenter){
+  if(isMapThere($x,$y) AND $notCenter == true){
+    // Map is there. Button, you can move.
+    $out = "
+      <form method='post'>
+        <input type='hidden' name='moveTo' value='1'/>
+        <input type='hidden' name='x' value='".$x."'/>
+        <input type='hidden' name='y' value='".$y."'/>
+        <input type='submit' class='button_nav' value='move here'/>
+      </form>
+    ";
+    return $out;
+  }
+  return null;
+}
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
+// EXPLORE BUTTON GENERATION
+function button_exporeHere($x,$y,$notCenter){
+  if(!isMapThere($x,$y) AND $notCenter){
+    // Map is not there, explore button must be.
+    $out = "
+      <form method='post'>
+        <input type='hidden' name='explore' value='1'/>
+        <input type='hidden' name='x' value='".$x."'/>
+        <input type='hidden' name='y' value='".$y."'/>
+        <input type='submit' class='button_nav' value='explore here'/>
+      </form>
+    ";
+    return $out;
+  }
+  return null;
+}
 // GET STAR IMAGE BY COORDINATES
 function getStarImage($x,$y){
   // init and includes

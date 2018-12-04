@@ -182,4 +182,16 @@ function assignMotherShip(){
   return;
 }
 // --------------------------------------------------------------------------------------------------------------------------------------------
+// GET PLAYER ACTIVE MOTHERSHIP
+function getActiveMothership(){
+  // init and include
+  include "includes/dbConfig.php";
+  // query to get active ship loc.
+  $uID = getUserID();
+  $shipQ = mysqli_query($con, "SELECT id,location_ship FROM user WHERE id='$uID'");
+  $shipA = mysqli_fetch_array($shipQ);
+  $shipID = $shipA['location_ship'];
+  return $shipID;
+}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 ?>

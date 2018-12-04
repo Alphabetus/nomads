@@ -102,8 +102,8 @@ function sendRegistrationEmail($email,$username){
         To activate your account and start playing please click on the link below.<br>
         <a href='".$activationLink."'>".$activationLink."</a><br>
         <br>
-        If you have any questions please reach us by email at:<br>
-        <a href='mailto:contact@followarmy.com'>contact@followarmy.com</a><br>
+        If you have any questions please check our issues tab on the official GitHub and submit a request.<br>
+        <a href='https://github.com/Alphabetus/Nomads'>Official Github</a><br>
         Thank you, have fun.
         <br>
         <br>

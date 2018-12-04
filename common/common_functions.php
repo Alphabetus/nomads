@@ -96,4 +96,16 @@ function getUserSession(){
   return $sessionID;
 }
 // --------------------------------------------------------------------------------------------------------------------------------------------
+// GET GAME SETTINGS
+function getSetting($settingID){
+  // include
+  include "includes/dbConfig.php";
+  // query settings
+  $settingsQuery = mysqli_query($con, "SELECT * FROM game_settings WHERE game_setting_id=".$settingID."");
+  $settingsArray = mysqli_fetch_array($settingsQuery);
+  $setting = $settingsArray['game_setting_value'];
+  // return 
+  return $setting;
+}
+// --------------------------------------------------------------------------------------------------------------------------------------------
 ?>
